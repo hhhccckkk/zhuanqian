@@ -44,6 +44,15 @@
                 android:background="@drawable/shouye_bar_selector"
                 android:gravity="center"
                />
+            <RadioButton
+                android:id="@+id/game_id"
+                style="@style/main_radio_botton"
+                 android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+               android:background="@drawable/game_bar_selector"
+                android:gravity="center"
+                android:textSize="12sp" />
             
             <RadioButton
                 android:id="@+id/duihuan_id"
@@ -55,7 +64,15 @@
                 android:gravity="center"
                 android:textSize="12sp" />
 
-           
+           <RadioButton
+                android:id="@+id/tuiguang_id"
+                style="@style/main_radio_botton"
+                 android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/paihang_bar_selector"
+                android:gravity="center"
+                android:textSize="12sp" />
             
             <RadioButton
                 android:id="@+id/user_id"
@@ -66,15 +83,7 @@
                 android:background="@drawable/user_bar_selector"
                 android:gravity="center"
                 android:textSize="12sp" />
-             <RadioButton
-                android:id="@+id/more_id"
-                style="@style/main_radio_botton"
-                 android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:background="@drawable/paihang_bar_selector"
-                android:gravity="center"
-                android:textSize="12sp" />
+             
         </RadioGroup>
   
     </RelativeLayout>
