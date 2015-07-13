@@ -40,7 +40,7 @@ import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 
 public class UserActivity extends BaseActivity implements BaseMethod,
-		OnClickListener, BaseAlert {
+		OnClickListener {
 	private TextView titleTextView;
 	private TextView nameTextView;
 	private TextView yqmTextView;
@@ -444,89 +444,10 @@ public class UserActivity extends BaseActivity implements BaseMethod,
 	}
 
 	private void addYQM() {
-		editText = new EditText(this);
-		new AlertDialog.Builder(this).setTitle("请输入邀请码")
-				.setIcon(android.R.drawable.ic_dialog_info).setView(editText)
-				.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						String yqmString = editText.getText().toString();
-						yqmString = yqmString.toUpperCase().trim();
-
-						if (yqmString == null || "".equals(yqmString)) {
-							Toasts.toast(UserActivity.this, "邀请码不能为空");
-						} else if (Data.userBean.getJhm().equals(yqmString)) {
-							Toasts.toast(UserActivity.this, "不能填入自己的邀请码！！！");
-						} else {
-							sendYQM(yqmString);
-						}
-					}
-				}).setNegativeButton("取消", null).show();
+		
 	}
 
-	private void sendYQM(final String yqm) {
-		PDialog.showDialog(this, "请稍等", "处理中");
-		params = new RequestParams();
-		params.put("yqm", yqm);
-		params.put("uid", Data.userBean.getId() + "");
-		params.put("jinbi", 200 + "");
-		HttpUtil.getHttpUtil().get(HttpUrls.addYQMP, params,
-				new JsonHttpResponseHandler() {
-					@Override
-					public void onFailure(Throwable error, String content) {
-						super.onFailure(error, content);
-						Toasts.toast(UserActivity.this, "邀请码填入失败 请检查网络");
-					}
-
-					@Override
-					public void onFinish(String url) {
-						super.onFinish(url);
-						PDialog.hidenDialog();
-					}
-
-					@Override
-					public void onSuccess(int statusCode, JSONObject response) {
-						super.onSuccess(statusCode, response);
-						try {
-							isOk = response.getBoolean("isok");
-							if (isOk) {
-								new AlertDialogs().alert(UserActivity.this,
-										UserActivity.this, "填入成功",
-										"您成功填入邀请码 每次获金币额外加10%");
-								Data.userBean.setShangjia(yqm);
-								hiden();
-
-							} else {
-								Toasts.toast(UserActivity.this,
-										"邀请码填入失败 请检查邀请码是否正确");
-							}
-						} catch (JSONException e) {
-							e.printStackTrace();
-						}
-					}
-				});
-	}
-
-	private void updateUsername() {
-		editText = new EditText(this);
-		new AlertDialog.Builder(this).setTitle("请输入昵称")
-				.setIcon(android.R.drawable.ic_dialog_info).setView(editText)
-				.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						String yqmString = editText.getText().toString();
-						if (yqmString == null || "".equals(yqmString)) {
-							Toasts.toast(UserActivity.this, "昵称不能为空");
-						} else if (yqmString.length() > 5) {
-							Toasts.toast(UserActivity.this, "昵称长度不能长于5个");
-						} else {
-							updateUserName(yqmString);
-						}
-					}
-				}).setNegativeButton("取消", null).show();
-	}
+	
 
 	private void updateUserName(final String name) {
 
@@ -570,28 +491,8 @@ public class UserActivity extends BaseActivity implements BaseMethod,
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) { // 按返回键时候，提示用户是否退出
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			AlertDialogs.alertDialog(this, this, "确定要退出吗？", "按错", "闪人",
-					"no_exit", "exit2");
-			return true;
-		}
+		showExitDialog();
 		return false;
-	}
-
-	@Override
-	public void doLeftButton(String value) {
-
-	}
-
-	@Override
-	public void doRightButton(String value) {
-		finish();
-		System.gc();
-	}
-
-	@Override
-	public void doSometing(String s) {
-
 	}
 
 }

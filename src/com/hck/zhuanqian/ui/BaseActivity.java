@@ -1,7 +1,10 @@
 package com.hck.zhuanqian.ui;
 
 import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -11,6 +14,7 @@ import com.hck.zhuanqian.data.Data;
 import com.hck.zhuanqian.net.RequestParams;
 import com.hck.zhuanqian.util.AppManager;
 import com.hck.zhuanqian.widget.AlertDialogs;
+import com.hck.zhuanqian.widget.CustomAlertDialog;
 import com.qq.e.ads.AdListener;
 import com.qq.e.ads.AdRequest;
 import com.qq.e.ads.AdSize;
@@ -145,13 +149,10 @@ public class BaseActivity extends Activity {
 	          
 	          @Override
 	          public void onAdClicked() {
-	          //Banner广告发生点击时回调，由于点击去重等因素不能保证回调数量与联盟最终统计数量一致
-	            Log.i("hck:","Banner AD Clicked");
 	          }
 
 	          @Override
 	          public void onNoAd(int arg0) {
-	            Log.i("hck:","Banner AD onNoAd:::"+arg0);
 	            
 	          }
 	        });
@@ -159,5 +160,49 @@ public class BaseActivity extends Activity {
 		view.addView(bannerAD);
 		bannerAD.fetchAd(new AdRequest());
 	}
+	public void showExitDialog() {
+		if (isFinishing()) {
+			return;
+		}
+
+		CustomAlertDialog dialog = new CustomAlertDialog(this);
+		dialog.setCancelable(false);
+		dialog.setCanceledOnTouchOutside(false);
+		dialog.setLeftText("退出");
+		dialog.setRightText("给好评");
+		dialog.setTitle("提示");
+		dialog.setMessage("这么好的软件，必需给个好评");
+		dialog.setOnLeftListener(new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				AppManager.getAppManager().AppExit(BaseActivity.this);
+				finish();
+				System.gc();
+			}
+		});
+
+		dialog.setOnRightListener(new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				startPinLunActivity();
+			}
+		});
+		if (!isFinishing() && dialog != null) {
+			dialog.show();
+		}
+
+	}
+
+	public void startPinLunActivity() {
+		try {
+			Uri uri = Uri.parse("market://details?id=" + "com.hck.kedouzq");
+			Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+			intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(intent);
+		} catch (Exception e) {
+		}
+
+	}
+
 
 }

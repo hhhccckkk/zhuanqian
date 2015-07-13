@@ -12,51 +12,22 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:background="@drawable/paper_bk"
         android:orientation="vertical" >
 
         <TextView
+           
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:paddingTop="5dp"
-            android:text="1000金币起可以兑换，1000等于1Q币 1Q币起即可以兑换，1—3天自动到账"
+            android:text="1000金币起可以兑换，1000等于1元人民币 1Q币起即可以兑换，1—3天自动到账"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
-        <LinearLayout 
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_gravity="right"
-            android:gravity="center_vertical"
-            android:orientation="horizontal" >
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/iround2"
-                android:paddingLeft="3dp"
-                android:paddingRight="3dp"
-                android:text="我的金币:"
-                android:textColor="#ffffff"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/dh_point"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:text="3000个"
-                android:textColor="@color/a"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+       
     </LinearLayout>
 
     <LinearLayout

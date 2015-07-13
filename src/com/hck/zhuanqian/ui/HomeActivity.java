@@ -3,23 +3,19 @@ package com.hck.zhuanqian.ui;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout;
@@ -42,21 +38,16 @@ import com.hck.zhuanqian.util.MyTools;
 import com.hck.zhuanqian.util.UIHelp;
 import com.hck.zhuanqian.util.UpdateUtil;
 import com.hck.zhuanqian.widget.AlertDialogs;
+import com.hck.zhuanqian.widget.AlertDialogs.OneBtOnclick;
+import com.hck.zhuanqian.widget.CustomAlertDialog;
 import com.hck.zhuanqian.widget.PDialog;
 import com.hck.zhuanqian.widget.Toasts;
-import com.hck.zhuanqian.widget.AlertDialogs.OneBtOnclick;
 
-public class HomeActivity extends BaseActivity implements BaseMethod, BaseAlert {
+public class HomeActivity extends BaseActivity implements BaseMethod {
 	private ListView listView;
 	private HomeActivityListAdpter adpter;
-	private int point;
-	private TextView textView;
 	private List<KindBean> kindBeans;
 	private boolean isFirst;
-	private MyBroadCast cast;
-	private LinearLayout ad;
-	private View view; // 每个页面的view
-	private int postion;
 	private TextView newTextView;
 
 	@Override
@@ -116,15 +107,6 @@ public class HomeActivity extends BaseActivity implements BaseMethod, BaseAlert 
 		return apiKey;
 	}
 
-	private void zhuce() {
-		cast = new MyBroadCast();
-		IntentFilter filter = new IntentFilter();
-		filter.addAction("android.intent.action.PACKAGE_ADDED");
-		filter.addAction("android.intent.action.PACKAGE_REMOVED");
-		filter.addDataScheme("package");
-		this.registerReceiver(cast, filter);
-
-	}
 
 	@Override
 	public void initDatas() {
@@ -159,13 +141,8 @@ public class HomeActivity extends BaseActivity implements BaseMethod, BaseAlert 
 	@Override
 	public void initViews() {
 		listView = (ListView) findViewById(R.id.home_list);
-		textView = (TextView) findViewById(R.id.title_text);
-		ad = (LinearLayout) findViewById(R.id.ad_lin);
-		view = getLayoutInflater().inflate(R.layout.home_item1, null);
-		view = getLayoutInflater().inflate(R.layout.home_item2, null);
 		newTextView = (TextView) findViewById(R.id.home_new);
 		newTextView.setText(Data.news);
-		// handler.post(thread);
 	}
 
 	@Override
@@ -216,7 +193,6 @@ public class HomeActivity extends BaseActivity implements BaseMethod, BaseAlert 
 					}
 				});
 	}
-	
 
 	@Override
 	public void setDate() {
@@ -226,41 +202,15 @@ public class HomeActivity extends BaseActivity implements BaseMethod, BaseAlert 
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) { // 按返回键时候，提示用户是否退出
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			AlertDialogs.alertDialog(this, this, "确定要退出吗？", "按错", "闪人",
-					"no_exit", "exit2");
-			return true;
-		}
+		showExitDialog();
 		return false;
 	}
 
 	@Override
-	public void doLeftButton(String value) {
-
-	}
-
-	@Override
-	public void doRightButton(String value) {
-
-		AppManager.getAppManager().AppExit(this);
-		finish();
-		System.gc();
-
-	}
-
-	@Override
-	public void doSometing(String s) {
-		finish();
-		System.gc();
-	}
-
-	@Override
 	protected void onDestroy() {
-		if (cast != null) {
-			this.unregisterReceiver(cast);
-		}
 		super.onDestroy();
 
 	}
 
+	
 }

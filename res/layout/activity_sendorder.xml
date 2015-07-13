@@ -93,12 +93,14 @@
             android:textSize="14sp" />
 
         <Button
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="13dp"
-            android:background="@drawable/tuichu_selector"
+            android:background="@drawable/login_bt_selector"
             android:onClick="sendOrder"
             android:text="确定兑换"
             android:textColor="#ffffff"

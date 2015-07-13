@@ -19,20 +19,18 @@ import com.hck.zhuanqian.bean.OrderBean;
 import com.hck.zhuanqian.data.Data;
 import com.hck.zhuanqian.data.HttpUrls;
 import com.hck.zhuanqian.net.JsonHttpResponseHandler;
-import com.hck.zhuanqian.util.AppManager;
 import com.hck.zhuanqian.util.HttpUtil;
 import com.hck.zhuanqian.util.JsonUtil;
 import com.hck.zhuanqian.util.UIHelp;
 import com.hck.zhuanqian.widget.AlertDialogs;
 import com.hck.zhuanqian.widget.PDialog;
 
-public class DuiHuanActivity extends BaseActivity implements BaseMethod,
-		BaseAlert {
+public class DuiHuanActivity extends BaseActivity implements BaseMethod
+		 {
 	private TextView titleTextView;
 	private DHListAdpter adpter;
 	private List<OrderBean> beans;
 	private ListView listView;
-	private TextView poinTextView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +46,7 @@ public class DuiHuanActivity extends BaseActivity implements BaseMethod,
 	@Override
 	public void initDatas() {
 		beans = new ArrayList<OrderBean>();
-		titleTextView.setText("兑换中心");
+		
 
 	}
 
@@ -57,14 +55,13 @@ public class DuiHuanActivity extends BaseActivity implements BaseMethod,
 		titleTextView = (TextView) findViewById(R.id.title_text);
 		listView = (ListView) findViewById(R.id.dh_list);
 		titleTextView.setTextSize(18);
-		poinTextView=(TextView) findViewById(R.id.dh_point);
 
 	}
 
 	@Override
 	protected void onResume() {
-		poinTextView.setText(Data.userBean.getAllKeDouBi()+"个");
-
+		titleTextView.setText("我的金币: "+Data.userBean.getAllKeDouBi()+"个");
+		titleTextView.setTextSize(20);
 		super.onResume();
 	}
 
@@ -80,7 +77,7 @@ public class DuiHuanActivity extends BaseActivity implements BaseMethod,
 
 	public void startSendOrderZFBActivity(View view) {
 		if (!isMoneyOkZFB()) {
-			AlertDialogs.alert(this, "", "兑换支付宝 金币至少需要5千个",false);
+			AlertDialogs.alert(this, "", "兑换支付宝 金币至少需要2千个",false);
 		} else {
 			UIHelp.startZFBActivity(DuiHuanActivity.this, 2);
 		}
@@ -103,7 +100,7 @@ public class DuiHuanActivity extends BaseActivity implements BaseMethod,
 	}
 
 	private boolean isMoneyOkZFB() {
-		if (Data.userBean.getAllKeDouBi() < 5000) {
+		if (Data.userBean.getAllKeDouBi() < 2000) {
 			return false;
 		} else {
 			return true;
@@ -162,31 +159,11 @@ public class DuiHuanActivity extends BaseActivity implements BaseMethod,
 	}
 
 
+	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) { // 按返回键时候，提示用户是否退出
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			AlertDialogs.alertDialog(this, this, "确定要退出吗？", "按错", "闪人",
-					"no_exit", "exit2");
-			return true;
-		}
+		showExitDialog();
 		return false;
-	}
-
-	@Override
-	public void doLeftButton(String value) {
-
-	}
-
-	@Override
-	public void doRightButton(String value) {
-		AppManager.getAppManager().AppExit(this);
-		finish();
-		System.gc();
-	}
-
-	@Override
-	public void doSometing(String value) {
-       
 	}
 
 }

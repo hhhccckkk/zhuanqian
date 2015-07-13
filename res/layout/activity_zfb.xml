@@ -2,136 +2,137 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
     android:background="@color/whilt"
-    >
+    android:orientation="vertical" >
 
     <include
         android:layout_width="fill_parent"
         android:layout_height="50dp"
         layout="@layout/activity_title" />
-    <TextView 
-        android:paddingTop="3dp"
-        android:layout_marginBottom="10dp"
+
+    <TextView
         android:id="@+id/send_order_title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/paper_bk"
         android:paddingLeft="15dp"
         android:paddingRight="12sp"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:background="@drawable/paper_bk"
+        android:paddingTop="3dp"
         android:text="您当前有蝌蚪币3000个，最多可以兑换3q币"
-        />
-    <TextView 
-        android:id="@+id/send_order_title"
-        android:paddingLeft="3dp"
-        android:gravity="center_vertical"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="3dp"
+        android:text="兑换数量必须为大于等于2的整数"
         android:textColor="@color/black"
-        android:textSize="14sp"
-        android:text="兑换数量必须为大于等于5的整数"
-        />
-    <LinearLayout 
-           android:background="@drawable/title_bg"
+        android:textSize="14sp" />
+
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
-        >
-        <TextView 
-            android:paddingLeft="10dp"
-            android:gravity="center_vertical"
-            android:textColor="@color/whilt"
-            android:textSize="14sp"
+        android:background="@drawable/title_bg"
+        android:orientation="horizontal" >
+
+        <TextView
             android:layout_width="0dp"
             android:layout_height="fill_parent"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
             android:text="请输入兑换数量:"
-            android:layout_weight="3"
-            />
-        <EditText 
-            android:id="@+id/num1"
-            android:layout_marginRight="5dp"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="4"
-            android:inputType="number"
-            />
-    </LinearLayout>
-    <LinearLayout 
-           android:background="@drawable/title_bg"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        >
-        <TextView 
-            android:paddingLeft="10dp"
-            android:gravity="center_vertical"
-          android:textColor="@color/whilt"
-            android:textSize="14sp"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:text="支付宝账号："
-            android:layout_weight="3"
-            />
-        <EditText 
-            android:id="@+id/num2"
-            android:layout_marginRight="5dp"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="4"
-            />
-    </LinearLayout>
-    <LinearLayout 
-           android:background="@drawable/title_bg"
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        >
-        <TextView 
-            android:paddingLeft="10dp"
-            android:gravity="center_vertical"
             android:textColor="@color/whilt"
-            android:textSize="14sp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/num1"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:text="真实姓名："
-            android:layout_weight="3"
-            />
-        <EditText 
-            android:id="@+id/num3"
             android:layout_marginRight="5dp"
+            android:layout_weight="4"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/title_bg"
+        android:orientation="horizontal" >
+
+        <TextView
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:layout_weight="4"
-            />
-    </LinearLayout>
-    <RelativeLayout 
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="15dp"
-        android:layout_height="fill_parent"
-        android:layout_width="fill_parent"
-        >
-        <TextView 
+            android:layout_weight="3"
+            android:gravity="center_vertical"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textSize="14sp"
-            android:textColor="#ff0000"
+            android:text="支付宝账号："
+            android:textColor="@color/whilt"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/num2"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/title_bg"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="真实姓名："
+            android:textColor="@color/whilt"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/num3"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="4" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp" >
+
+        <TextView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="请务必保证您填写信息的正确性。由于自己信息填写错误导致的，兑换失败，由自己全部承担"
-            />
-      <Button
-          
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="13dp"
-        android:background="@drawable/tuichu_selector"
-        android:onClick="sendOrder"
-        android:text="确定兑换"
-        android:textColor="#ffffff"
-        android:textSize="18sp" />
-     </RelativeLayout>
+            android:textColor="#ff0000"
+            android:textSize="14sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="13dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/login_bt_selector"
+            android:onClick="sendOrder"
+            android:text="确定兑换"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
 </LinearLayout>
