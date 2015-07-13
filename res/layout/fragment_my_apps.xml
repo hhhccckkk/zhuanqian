@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+   <TextView 
+       android:paddingTop="5dp"
+       android:paddingLeft="15dp"
+       android:paddingRight="12dp"
+       android:background="@drawable/paper_bk"
+       android:layout_width="fill_parent"
+       android:layout_height="50dp"
+       android:textColor="@color/black"
+       android:textSize="14sp"
+       
+       android:text="签到获取大量蝌蚪币  您只需要点击签到按钮，打开该应用及可获取相应的丰厚奖励"
+       /> 
+<ListView
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:id="@+id/my_apps_list_id"
+        android:cacheColorHint="#00000000"
+        ></ListView>
+</LinearLayout>

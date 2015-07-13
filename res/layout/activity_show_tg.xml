@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whilt"
+    android:orientation="vertical" >
+    
+
+  <LinearLayout 
+       android:background="@color/whilt"
+      android:layout_width="fill_parent"
+      android:layout_height="40dp"
+      android:orientation="horizontal"
+      >
+    <TextView 
+          android:gravity="center"
+          android:textSize="16sp"
+          android:layout_width="0dp"
+          android:layout_height="fill_parent"
+          android:layout_weight="3"
+          android:textColor="@color/a"
+          android:text="推广用户"
+          />
+      <TextView 
+          android:gravity="center"
+          android:textSize="16sp"
+          android:layout_width="0dp"
+          android:layout_height="fill_parent"
+          android:layout_weight="7"
+          android:textColor="@color/a"
+          android:text="获取金币"
+          />
+      <TextView 
+           android:gravity="center"
+          android:textSize="16sp"
+          android:layout_width="0dp"
+          android:layout_height="fill_parent"
+          android:layout_weight="2"
+          android:textColor="@color/a"
+          android:text="时间"
+          />
+  </LinearLayout> 
+  <View 
+      android:layout_width="fill_parent"
+      android:layout_height="1dp"
+      android:background="@drawable/line"
+      /> 
+    <ListView
+                android:id="@+id/tg_list"
+                style="@style/list_style"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:cacheColorHint="#00000000" >
+            </ListView>
+</LinearLayout>

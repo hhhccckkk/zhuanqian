@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+   
+   <include 
+       android:id="@+id/title"
+       android:layout_height="45dp"
+       android:layout_width="fill_parent"
+       layout="@layout/activity_title"
+       />
+    <ScrollView
+        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_margin="10dp"
+                android:id="@+id/text"
+                android:text="新手必看，请您务必仔细看完下面的帮助说明\n
+                点击开始试玩按钮后，会进入app下载页面。点击一个应用，可以看见获取蝌蚪币的步骤，请按照步骤进行操作，方能获取蝌蚪币\n
+                有的是需要注册，有需要试玩几分钟。
+                点击相应应用进行下载。（不能一次下载多个）下载过程中，请保持留在下载界面（点击开始试玩进入的那个下载界面）\n
+                下载完成后，进行安装，安装后，点击打开，请根据刚才您看的获取积分需求进行操作，一般是试用3分钟，注册，或者登陆一次（请按照说明做，不然获取不到蝌蚪币）。
+                试用玩后，退出试玩的应用，回到本应用后，请点返回键，从下载页面返回当前
+                页面，可以看见系统给你加的蝌蚪币了。如果没有加上，请点击找回蝌蚪币，进行一次找回。如果还是没有，说明你操作不正确，或者没有按照要求，试玩app。获取蝌蚪币后，请不要马上卸载app，
+                第2天可以签到，继续获取蝌蚪币的。如果您需要卸载，务必最早在3天后方能卸载，不然以后可能获取不到积分。
+                特别注意：本区每天限制下载试玩一个app，不然，获取不到积分或者多余积分会被扣除，严重者视为刷币处理。请务必牢记\n
+                请不要利用恶意途径刷币等操作，一经发现，直接封号，不予结算。 适合您的app，您可以保留使用，是在不喜欢的app，请您务必最早在3天后才能卸载。
+                "
+                android:textSize="16sp"
+                android:textColor="#ff0000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <ImageView 
+                android:id="@+id/image"
+                android:layout_below="@+id/text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/wanpu"
+                />
+            <TextView 
+                 android:textSize="16sp"
+                android:textColor="#ff0000"
+                android:layout_below="@+id/image"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:text="如上图所示，虚线框里面的1,2两项即为获取蝌蚪币的步骤"
+                />
+           
+        </RelativeLayout>
+    </ScrollView>
+   <Button 
+                android:layout_alignParentBottom="true"
+                android:padding="5dp"
+                android:background="@drawable/tuichu_selector"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/whilt"
+                android:text="开始赚钱"
+                android:onClick="startGetMoney"
+                />
+</RelativeLayout>

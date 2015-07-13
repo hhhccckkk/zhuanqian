@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whilt"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        layout="@layout/activity_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#e5e5e5"
+            android:padding="5dp"
+            android:text="为了让您可以了解本软件，了解怎么赚钱，你必需仔细看完该新手帮助哦，看完后，相信你能3分钟赚一元.下滑查看"
+            android:textColor="#ff0000"
+            android:textSize="14sp" />
+       
+        <TextView 
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:text="点击任意一个赚钱区，可以进入相应的赚钱界面，界面有相应的说明。然后，点击按钮
+            开始赚钱，等一会儿，会出现 相应的 app下载界面，如图"
+            />
+        <ImageView 
+            android:layout_margin="20dp"
+            android:scaleType="fitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/xinshou_ad"
+            />
+       
+        <WebView 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/webView"
+            />
+         
+         
+        <Button 
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="45dp"
+            android:background="@drawable/more_shape"
+            android:text="返回开始赚钱"
+            android:textColor="#ff0000"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:onClick="back"
+            android:layout_marginBottom="10dp"
+            />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

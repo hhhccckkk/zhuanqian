@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+   
+   <include 
+       android:id="@+id/title"
+       android:layout_height="45dp"
+       android:layout_width="fill_parent"
+       layout="@layout/activity_title"
+       />
+    <ScrollView
+        android:layout_marginBottom="30dp"
+        android:layout_below="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+            <TextView 
+                android:layout_margin="5dp"
+                android:id="@+id/text1"
+                android:textColor="#ff0000"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:text="本区规则：每天限制一个，可以签到获取积分。 下载安装，打开1-3分钟可以获取蝌蚪币
+                 "
+                />
+          
+           
+        </RelativeLayout>
+    </ScrollView>
+   <Button 
+                android:layout_alignParentBottom="true"
+                android:padding="5dp"
+                android:background="@drawable/tuichu_selector"
+                android:layout_marginBottom="3dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:text="开始赚钱"
+                android:onClick="startGetMoney"
+                />
+</RelativeLayout>

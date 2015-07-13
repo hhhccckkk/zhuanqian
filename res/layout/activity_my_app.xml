@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:orientation="vertical" >
+<include layout="@layout/activity_title"
+    android:layout_width="fill_parent"
+    android:layout_height="45dp"
+    />
+
+   <LinearLayout
+       
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="40.0dip"
+        android:background="@color/a" >
+
+        <TextView
+           
+            android:id="@+id/apps"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="极品应用"
+            android:textColor="@color/whilt"
+            android:textSize="18.0dip" />
+
+        <TextView
+            
+            android:padding="3dp"
+            android:id="@+id/qd" 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="应用签到"
+             android:textColor="@color/whilt"
+            android:textSize="14.0dip" />
+        
+      
+        
+
+      
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/cursor"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        android:scaleType="matrix"
+        android:src="@drawable/roller" />
+     <LinearLayout 
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/ad_lin"
+     android:orientation="vertical"
+     ></LinearLayout>
+<TextView 
+    android:textColor="#ff0000"
+    android:padding="10dp"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp"
+    android:text="所有应用都经过 百度查毒 检测，请放心下载试玩"
+    />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    
+   
+
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE"
+    android:orientation="vertical" >
+<include layout="@layout/activity_title"
+    android:layout_width="fill_parent"
+    android:layout_height="45dp"
+    />
+
+   <LinearLayout
+       
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="40.0dip"
+        android:background="@color/a" >
+
+        <TextView
+            android:id="@+id/app_tg"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="推广赚钱"
+            android:textColor="@color/whilt"
+            android:textSize="18.0dip" />
+
+        <TextView
+            
+            android:padding="3dp"
+            android:id="@+id/app_my_tg" 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="推广记录"
+             android:textColor="@color/black"
+            android:textSize="18.0dip" />
+        
+      
+        
+
+      
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/cursor"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        android:scaleType="matrix"
+        android:src="@drawable/roller" />
+     <LinearLayout 
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/ad_lin"
+     android:orientation="vertical"
+     ></LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    
+   
+
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#000000</color>
+    <color name="whilt">#ffffff</color>
+    <color name="more_select_bg">#EE9A00</color>
+    <color name="ws">#90ffffff</color>
+    <color name="a">#EE4000</color>
+    <color name="b">#EEB422</color>
+    <color name="c">#6096CDCD</color>
+    <color name="d">#79CDCD</color>
+    <color name="e">#905CACEE</color>
+    <color name="f">#CD6839</color>
+    <color name="g">#90ffffff</color>
+    <color name="h">#90ffffff</color>
+    <color name="i">#90ffffff</color>
+    <color name="j">#90ffffff</color>
+    
+    <color name="duihuan_tx">#EE4000</color>
+
+</resources>

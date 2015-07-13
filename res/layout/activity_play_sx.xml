@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+   <include 
+       android:id="@+id/title"
+       android:layout_height="45dp"
+       android:layout_width="fill_parent"
+       layout="@layout/activity_title"
+       />
+    <ScrollView
+        android:layout_marginBottom="30dp"
+        android:layout_below="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+            <TextView 
+                android:layout_margin="5dp"
+                android:id="@+id/text1"
+                android:textColor="#ff0000"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:text="本区说明："
+                />
+            <TextView
+                android:layout_below="@+id/text1"
+                android:layout_margin="5dp"
+                android:id="@+id/text2"
+                android:text="
+               下载应用，打开应用大约10秒即可，如下图获取蝌蚪币会有提示的。24小时候后可以签到获取蝌蚪币
+                "
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <ImageView 
+                android:layout_below="@+id/text2"
+                android:id="@+id/image"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/yinggao"
+                />
+           
+          
+        </RelativeLayout>
+    </ScrollView>
+   <Button 
+                android:layout_alignParentBottom="true"
+                android:padding="5dp"
+                android:background="@drawable/tuichu_selector"
+                android:layout_marginBottom="3dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:text="开始赚钱"
+                android:onClick="startGetMoney"
+                />
+</RelativeLayout>

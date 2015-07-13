@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="start_img"></item>
+    
+    
+   <item type="id" name="title_bt_left"></item>
+   <item type="id" name="title_bt_right"></item>
+   <item type="id" name="title_text"></item>
+   
+   <item type="id" name="home_list_item_image"></item>
+   <item type="id" name="home_list_item_content"></item>
+   
+   
+</resources>

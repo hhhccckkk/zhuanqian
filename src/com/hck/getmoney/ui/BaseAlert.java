@@ -1,0 +1,1 @@
+package com.hck.getmoney.ui;/** *  * @author 黄成科 * 用于弹出对话框的左右按钮处理事件接口 * */public interface BaseAlert {public void doLeftButton(String value);  //按左边按钮时候调用public void doRightButton(String value); //按右边按钮时候调用public void doSometing(String value);}

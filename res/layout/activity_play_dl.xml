@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        layout="@layout/activity_title" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/title"
+        android:layout_marginBottom="30dp" >
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:id="@+id/play_dl_name"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/paper_bk"
+                android:paddingLeft="18dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:text="该区规则必看，该区每天限制试玩4个app"
+                android:textColor="#ff0000"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/play_dl_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/play_dl_name"
+                android:paddingLeft="18dp"
+                android:paddingRight="15dp"
+                android:paddingTop="5dp"
+                android:text="该区规则必看，该区每天限制试玩4个app"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_marginBottom="5dp"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/AdLinearLayout"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/tuichu_selector"
+        android:onClick="startGetMoney"
+        android:padding="5dp"
+        android:text="开始赚钱"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/AdLinearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal" />
+
+</RelativeLayout>
